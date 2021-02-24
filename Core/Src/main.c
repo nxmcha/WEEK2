@@ -148,6 +148,10 @@ int main(void) {
 					ThisPassWord[num] = 0;
 					num = num + 1;
 					timestamp = HAL_GetTick();
+				}else if (ButtonMatrixState == 128 && num>0) {
+					ThisPassWord[num-1] = 0;
+					num = num - 1;
+					timestamp = HAL_GetTick();
 				}
 			}
 		}
