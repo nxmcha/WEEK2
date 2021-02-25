@@ -44,7 +44,7 @@ UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
 //save status of Button Matrix
-GPIO_TypeDef *ThisPassWord[11] = { 0 };
+uint16_t ThisPassWord[11] = { 0 };
 uint16_t ButtonMatrixState = 0;
 uint32_t timestamp = 0;
 uint32_t timestamp2 = 0;

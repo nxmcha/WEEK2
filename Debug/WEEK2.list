@@ -21,9 +21,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, DATA
   8 .data         0000003c  20000000  080024b0  00020000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  9 .bss          000000a4  2000003c  080024ec  0002003c  2**2
+  9 .bss          0000008c  2000003c  080024ec  0002003c  2**2
                   ALLOC
- 10 ._user_heap_stack 00000600  200000e0  080024ec  000200e0  2**0
+ 10 ._user_heap_stack 00000600  200000c8  080024ec  000200c8  2**0
                   ALLOC
  11 .ARM.attributes 00000030  00000000  00000000  0002003c  2**0
                   CONTENTS, READONLY
@@ -414,10 +414,10 @@ int main(void) {
 					ThisPassWord[num] = 7;
  8000518:	4b88      	ldr	r3, [pc, #544]	; (800073c <main+0x264>)
  800051a:	781b      	ldrb	r3, [r3, #0]
- 800051c:	4619      	mov	r1, r3
+ 800051c:	461a      	mov	r2, r3
  800051e:	4b8a      	ldr	r3, [pc, #552]	; (8000748 <main+0x270>)
- 8000520:	2207      	movs	r2, #7
- 8000522:	f843 2021 	str.w	r2, [r3, r1, lsl #2]
+ 8000520:	2107      	movs	r1, #7
+ 8000522:	f823 1012 	strh.w	r1, [r3, r2, lsl #1]
 					num = num + 1;
  8000526:	4b85      	ldr	r3, [pc, #532]	; (800073c <main+0x264>)
  8000528:	781b      	ldrb	r3, [r3, #0]
@@ -439,10 +439,10 @@ int main(void) {
 					ThisPassWord[num] = 8;
  8000546:	4b7d      	ldr	r3, [pc, #500]	; (800073c <main+0x264>)
  8000548:	781b      	ldrb	r3, [r3, #0]
- 800054a:	4619      	mov	r1, r3
+ 800054a:	461a      	mov	r2, r3
  800054c:	4b7e      	ldr	r3, [pc, #504]	; (8000748 <main+0x270>)
- 800054e:	2208      	movs	r2, #8
- 8000550:	f843 2021 	str.w	r2, [r3, r1, lsl #2]
+ 800054e:	2108      	movs	r1, #8
+ 8000550:	f823 1012 	strh.w	r1, [r3, r2, lsl #1]
 					num = num + 1;
  8000554:	4b79      	ldr	r3, [pc, #484]	; (800073c <main+0x264>)
  8000556:	781b      	ldrb	r3, [r3, #0]
@@ -464,10 +464,10 @@ int main(void) {
 					ThisPassWord[num] = 9;
  8000574:	4b71      	ldr	r3, [pc, #452]	; (800073c <main+0x264>)
  8000576:	781b      	ldrb	r3, [r3, #0]
- 8000578:	4619      	mov	r1, r3
+ 8000578:	461a      	mov	r2, r3
  800057a:	4b73      	ldr	r3, [pc, #460]	; (8000748 <main+0x270>)
- 800057c:	2209      	movs	r2, #9
- 800057e:	f843 2021 	str.w	r2, [r3, r1, lsl #2]
+ 800057c:	2109      	movs	r1, #9
+ 800057e:	f823 1012 	strh.w	r1, [r3, r2, lsl #1]
 					num = num + 1;
  8000582:	4b6e      	ldr	r3, [pc, #440]	; (800073c <main+0x264>)
  8000584:	781b      	ldrb	r3, [r3, #0]
@@ -489,10 +489,10 @@ int main(void) {
 					ThisPassWord[num] = 4;
  80005a2:	4b66      	ldr	r3, [pc, #408]	; (800073c <main+0x264>)
  80005a4:	781b      	ldrb	r3, [r3, #0]
- 80005a6:	4619      	mov	r1, r3
+ 80005a6:	461a      	mov	r2, r3
  80005a8:	4b67      	ldr	r3, [pc, #412]	; (8000748 <main+0x270>)
- 80005aa:	2204      	movs	r2, #4
- 80005ac:	f843 2021 	str.w	r2, [r3, r1, lsl #2]
+ 80005aa:	2104      	movs	r1, #4
+ 80005ac:	f823 1012 	strh.w	r1, [r3, r2, lsl #1]
 					num = num + 1;
  80005b0:	4b62      	ldr	r3, [pc, #392]	; (800073c <main+0x264>)
  80005b2:	781b      	ldrb	r3, [r3, #0]
@@ -514,10 +514,10 @@ int main(void) {
 					ThisPassWord[num] = 5;
  80005d0:	4b5a      	ldr	r3, [pc, #360]	; (800073c <main+0x264>)
  80005d2:	781b      	ldrb	r3, [r3, #0]
- 80005d4:	4619      	mov	r1, r3
+ 80005d4:	461a      	mov	r2, r3
  80005d6:	4b5c      	ldr	r3, [pc, #368]	; (8000748 <main+0x270>)
- 80005d8:	2205      	movs	r2, #5
- 80005da:	f843 2021 	str.w	r2, [r3, r1, lsl #2]
+ 80005d8:	2105      	movs	r1, #5
+ 80005da:	f823 1012 	strh.w	r1, [r3, r2, lsl #1]
 					num = num + 1;
  80005de:	4b57      	ldr	r3, [pc, #348]	; (800073c <main+0x264>)
  80005e0:	781b      	ldrb	r3, [r3, #0]
@@ -539,10 +539,10 @@ int main(void) {
 					ThisPassWord[num] = 6;
  80005fe:	4b4f      	ldr	r3, [pc, #316]	; (800073c <main+0x264>)
  8000600:	781b      	ldrb	r3, [r3, #0]
- 8000602:	4619      	mov	r1, r3
+ 8000602:	461a      	mov	r2, r3
  8000604:	4b50      	ldr	r3, [pc, #320]	; (8000748 <main+0x270>)
- 8000606:	2206      	movs	r2, #6
- 8000608:	f843 2021 	str.w	r2, [r3, r1, lsl #2]
+ 8000606:	2106      	movs	r1, #6
+ 8000608:	f823 1012 	strh.w	r1, [r3, r2, lsl #1]
 					num = num + 1;
  800060c:	4b4b      	ldr	r3, [pc, #300]	; (800073c <main+0x264>)
  800060e:	781b      	ldrb	r3, [r3, #0]
@@ -564,10 +564,10 @@ int main(void) {
 					ThisPassWord[num] = 1;
  800062e:	4b43      	ldr	r3, [pc, #268]	; (800073c <main+0x264>)
  8000630:	781b      	ldrb	r3, [r3, #0]
- 8000632:	4619      	mov	r1, r3
+ 8000632:	461a      	mov	r2, r3
  8000634:	4b44      	ldr	r3, [pc, #272]	; (8000748 <main+0x270>)
- 8000636:	2201      	movs	r2, #1
- 8000638:	f843 2021 	str.w	r2, [r3, r1, lsl #2]
+ 8000636:	2101      	movs	r1, #1
+ 8000638:	f823 1012 	strh.w	r1, [r3, r2, lsl #1]
 					num = num + 1;
  800063c:	4b3f      	ldr	r3, [pc, #252]	; (800073c <main+0x264>)
  800063e:	781b      	ldrb	r3, [r3, #0]
@@ -589,10 +589,10 @@ int main(void) {
 					ThisPassWord[num] = 2;
  800065e:	4b37      	ldr	r3, [pc, #220]	; (800073c <main+0x264>)
  8000660:	781b      	ldrb	r3, [r3, #0]
- 8000662:	4619      	mov	r1, r3
+ 8000662:	461a      	mov	r2, r3
  8000664:	4b38      	ldr	r3, [pc, #224]	; (8000748 <main+0x270>)
- 8000666:	2202      	movs	r2, #2
- 8000668:	f843 2021 	str.w	r2, [r3, r1, lsl #2]
+ 8000666:	2102      	movs	r1, #2
+ 8000668:	f823 1012 	strh.w	r1, [r3, r2, lsl #1]
 					num = num + 1;
  800066c:	4b33      	ldr	r3, [pc, #204]	; (800073c <main+0x264>)
  800066e:	781b      	ldrb	r3, [r3, #0]
@@ -614,10 +614,10 @@ int main(void) {
 					ThisPassWord[num] = 3;
  800068e:	4b2b      	ldr	r3, [pc, #172]	; (800073c <main+0x264>)
  8000690:	781b      	ldrb	r3, [r3, #0]
- 8000692:	4619      	mov	r1, r3
+ 8000692:	461a      	mov	r2, r3
  8000694:	4b2c      	ldr	r3, [pc, #176]	; (8000748 <main+0x270>)
- 8000696:	2203      	movs	r2, #3
- 8000698:	f843 2021 	str.w	r2, [r3, r1, lsl #2]
+ 8000696:	2103      	movs	r1, #3
+ 8000698:	f823 1012 	strh.w	r1, [r3, r2, lsl #1]
 					num = num + 1;
  800069c:	4b27      	ldr	r3, [pc, #156]	; (800073c <main+0x264>)
  800069e:	781b      	ldrb	r3, [r3, #0]
@@ -639,10 +639,10 @@ int main(void) {
 					ThisPassWord[num] = 0;
  80006be:	4b1f      	ldr	r3, [pc, #124]	; (800073c <main+0x264>)
  80006c0:	781b      	ldrb	r3, [r3, #0]
- 80006c2:	4619      	mov	r1, r3
+ 80006c2:	461a      	mov	r2, r3
  80006c4:	4b20      	ldr	r3, [pc, #128]	; (8000748 <main+0x270>)
- 80006c6:	2200      	movs	r2, #0
- 80006c8:	f843 2021 	str.w	r2, [r3, r1, lsl #2]
+ 80006c6:	2100      	movs	r1, #0
+ 80006c8:	f823 1012 	strh.w	r1, [r3, r2, lsl #1]
 					num = num + 1;
  80006cc:	4b1b      	ldr	r3, [pc, #108]	; (800073c <main+0x264>)
  80006ce:	781b      	ldrb	r3, [r3, #0]
@@ -671,7 +671,7 @@ int main(void) {
  80006f8:	3b01      	subs	r3, #1
  80006fa:	4a13      	ldr	r2, [pc, #76]	; (8000748 <main+0x270>)
  80006fc:	2100      	movs	r1, #0
- 80006fe:	f842 1023 	str.w	r1, [r2, r3, lsl #2]
+ 80006fe:	f822 1013 	strh.w	r1, [r2, r3, lsl #1]
 					num = num - 1;
  8000702:	4b0e      	ldr	r3, [pc, #56]	; (800073c <main+0x264>)
  8000704:	781b      	ldrb	r3, [r3, #0]
@@ -706,16 +706,16 @@ int main(void) {
  8000736:	607b      	str	r3, [r7, #4]
  8000738:	e012      	b.n	8000760 <main+0x288>
  800073a:	bf00      	nop
- 800073c:	20000090 	.word	0x20000090
- 8000740:	20000088 	.word	0x20000088
- 8000744:	20000084 	.word	0x20000084
+ 800073c:	20000078 	.word	0x20000078
+ 8000740:	20000070 	.word	0x20000070
+ 8000744:	2000006e 	.word	0x2000006e
  8000748:	20000058 	.word	0x20000058
- 800074c:	2000008c 	.word	0x2000008c
+ 800074c:	20000074 	.word	0x20000074
 					ThisPassWord[j] = 0;
  8000750:	4a2f      	ldr	r2, [pc, #188]	; (8000810 <main+0x338>)
  8000752:	687b      	ldr	r3, [r7, #4]
  8000754:	2100      	movs	r1, #0
- 8000756:	f842 1023 	str.w	r1, [r2, r3, lsl #2]
+ 8000756:	f822 1013 	strh.w	r1, [r2, r3, lsl #1]
 				for (j = 0; j < 11; j++) {
  800075a:	687b      	ldr	r3, [r7, #4]
  800075c:	3301      	adds	r3, #1
@@ -747,52 +747,52 @@ int main(void) {
  8000788:	f47f aeb1 	bne.w	80004ee <main+0x16>
 				if (ThisPassWord[0] == 6 && ThisPassWord[1] == 2
  800078c:	4b20      	ldr	r3, [pc, #128]	; (8000810 <main+0x338>)
- 800078e:	681b      	ldr	r3, [r3, #0]
+ 800078e:	881b      	ldrh	r3, [r3, #0]
  8000790:	2b06      	cmp	r3, #6
  8000792:	f47f aeac 	bne.w	80004ee <main+0x16>
  8000796:	4b1e      	ldr	r3, [pc, #120]	; (8000810 <main+0x338>)
- 8000798:	685b      	ldr	r3, [r3, #4]
+ 8000798:	885b      	ldrh	r3, [r3, #2]
  800079a:	2b02      	cmp	r3, #2
  800079c:	f47f aea7 	bne.w	80004ee <main+0x16>
 						&& ThisPassWord[2] == 3 && ThisPassWord[3] == 4
  80007a0:	4b1b      	ldr	r3, [pc, #108]	; (8000810 <main+0x338>)
- 80007a2:	689b      	ldr	r3, [r3, #8]
+ 80007a2:	889b      	ldrh	r3, [r3, #4]
  80007a4:	2b03      	cmp	r3, #3
  80007a6:	f47f aea2 	bne.w	80004ee <main+0x16>
  80007aa:	4b19      	ldr	r3, [pc, #100]	; (8000810 <main+0x338>)
- 80007ac:	68db      	ldr	r3, [r3, #12]
+ 80007ac:	88db      	ldrh	r3, [r3, #6]
  80007ae:	2b04      	cmp	r3, #4
  80007b0:	f47f ae9d 	bne.w	80004ee <main+0x16>
 						&& ThisPassWord[4] == 0 && ThisPassWord[5] == 5
  80007b4:	4b16      	ldr	r3, [pc, #88]	; (8000810 <main+0x338>)
- 80007b6:	691b      	ldr	r3, [r3, #16]
+ 80007b6:	891b      	ldrh	r3, [r3, #8]
  80007b8:	2b00      	cmp	r3, #0
  80007ba:	f47f ae98 	bne.w	80004ee <main+0x16>
  80007be:	4b14      	ldr	r3, [pc, #80]	; (8000810 <main+0x338>)
- 80007c0:	695b      	ldr	r3, [r3, #20]
+ 80007c0:	895b      	ldrh	r3, [r3, #10]
  80007c2:	2b05      	cmp	r3, #5
  80007c4:	f47f ae93 	bne.w	80004ee <main+0x16>
 						&& ThisPassWord[6] == 0 && ThisPassWord[7] == 0
  80007c8:	4b11      	ldr	r3, [pc, #68]	; (8000810 <main+0x338>)
- 80007ca:	699b      	ldr	r3, [r3, #24]
+ 80007ca:	899b      	ldrh	r3, [r3, #12]
  80007cc:	2b00      	cmp	r3, #0
  80007ce:	f47f ae8e 	bne.w	80004ee <main+0x16>
  80007d2:	4b0f      	ldr	r3, [pc, #60]	; (8000810 <main+0x338>)
- 80007d4:	69db      	ldr	r3, [r3, #28]
+ 80007d4:	89db      	ldrh	r3, [r3, #14]
  80007d6:	2b00      	cmp	r3, #0
  80007d8:	f47f ae89 	bne.w	80004ee <main+0x16>
 						&& ThisPassWord[8] == 0 && ThisPassWord[9] == 3
  80007dc:	4b0c      	ldr	r3, [pc, #48]	; (8000810 <main+0x338>)
- 80007de:	6a1b      	ldr	r3, [r3, #32]
+ 80007de:	8a1b      	ldrh	r3, [r3, #16]
  80007e0:	2b00      	cmp	r3, #0
  80007e2:	f47f ae84 	bne.w	80004ee <main+0x16>
  80007e6:	4b0a      	ldr	r3, [pc, #40]	; (8000810 <main+0x338>)
- 80007e8:	6a5b      	ldr	r3, [r3, #36]	; 0x24
+ 80007e8:	8a5b      	ldrh	r3, [r3, #18]
  80007ea:	2b03      	cmp	r3, #3
  80007ec:	f47f ae7f 	bne.w	80004ee <main+0x16>
 						&& ThisPassWord[10] == 0) {
  80007f0:	4b07      	ldr	r3, [pc, #28]	; (8000810 <main+0x338>)
- 80007f2:	6a9b      	ldr	r3, [r3, #40]	; 0x28
+ 80007f2:	8a9b      	ldrh	r3, [r3, #20]
  80007f4:	2b00      	cmp	r3, #0
  80007f6:	f47f ae7a 	bne.w	80004ee <main+0x16>
 
@@ -809,10 +809,10 @@ int main(void) {
 		ButtonMatrixUpdate();
  800080e:	e66e      	b.n	80004ee <main+0x16>
  8000810:	20000058 	.word	0x20000058
- 8000814:	20000090 	.word	0x20000090
- 8000818:	2000008c 	.word	0x2000008c
+ 8000814:	20000078 	.word	0x20000078
+ 8000818:	20000074 	.word	0x20000074
  800081c:	40020000 	.word	0x40020000
- 8000820:	20000084 	.word	0x20000084
+ 8000820:	2000006e 	.word	0x2000006e
 
 08000824 <SystemClock_Config>:
 
@@ -1009,7 +1009,7 @@ static void MX_USART2_UART_Init(void) {
  800093e:	bf00      	nop
  8000940:	bd80      	pop	{r7, pc}
  8000942:	bf00      	nop
- 8000944:	2000009c 	.word	0x2000009c
+ 8000944:	20000084 	.word	0x20000084
  8000948:	40004400 	.word	0x40004400
 
 0800094c <MX_GPIO_Init>:
@@ -1399,11 +1399,11 @@ void ButtonMatrixUpdate() {
  8000bd2:	46bd      	mov	sp, r7
  8000bd4:	bd80      	pop	{r7, pc}
  8000bd6:	bf00      	nop
- 8000bd8:	20000094 	.word	0x20000094
+ 8000bd8:	2000007c 	.word	0x2000007c
  8000bdc:	20000000 	.word	0x20000000
  8000be0:	20000020 	.word	0x20000020
- 8000be4:	20000098 	.word	0x20000098
- 8000be8:	20000084 	.word	0x20000084
+ 8000be4:	20000080 	.word	0x20000080
+ 8000be8:	2000006e 	.word	0x2000006e
 
 08000bec <Error_Handler>:
 
@@ -1856,7 +1856,7 @@ LoopFillZerobss:
   ldr  r2, =_sbss
  8000d9c:	2000003c 	.word	0x2000003c
   ldr  r3, = _ebss
- 8000da0:	200000e0 	.word	0x200000e0
+ 8000da0:	200000c8 	.word	0x200000c8
 
 08000da4 <ADC_IRQHandler>:
  * @retval None       
@@ -2019,7 +2019,7 @@ __weak void HAL_IncTick(void)
  8000e68:	4770      	bx	lr
  8000e6a:	bf00      	nop
  8000e6c:	20000038 	.word	0x20000038
- 8000e70:	200000dc 	.word	0x200000dc
+ 8000e70:	200000c4 	.word	0x200000c4
 
 08000e74 <HAL_GetTick>:
   * @note This function is declared as __weak to be overwritten in case of other 
@@ -2039,7 +2039,7 @@ __weak uint32_t HAL_GetTick(void)
  8000e80:	f85d 7b04 	ldr.w	r7, [sp], #4
  8000e84:	4770      	bx	lr
  8000e86:	bf00      	nop
- 8000e88:	200000dc 	.word	0x200000dc
+ 8000e88:	200000c4 	.word	0x200000c4
 
 08000e8c <__NVIC_SetPriorityGrouping>:
            In case of a conflict between priority grouping and available
